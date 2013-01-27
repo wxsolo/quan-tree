@@ -68,9 +68,13 @@ class Duocai_parser
 			$act->title = $e->children(1)->children(0)->plaintext;
 			$act->stime = $e->children(1)->children(1)->plaintext;
 			$act->place = $e->children(1)->children(2)->plaintext;
-			$act->type = $e->children(1)->children(3)->plaintext;
-
+			$act->type = $e->children(1)->children(3)->children(1)->plaintext;
+			
+			$type = explode(' ', $e->children(1)->children(3)->plaintext);
+			$act->school = $type[3];
+//			var_dump($act->type);
 			$act->organizer = $e->children(1)->children(4)->plaintext;
+
 			$act_list[] = $act;
 		}
 		e($act_list);

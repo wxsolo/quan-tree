@@ -7,6 +7,7 @@
  **/
 class Activity
 {
+	public $school;			// 学校
 	public $title;			// 主题
 	public $stime;			// 开始时间
 	public $etime;			// 结束时间
